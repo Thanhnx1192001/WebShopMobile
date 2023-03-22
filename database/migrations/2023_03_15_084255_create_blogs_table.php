@@ -15,21 +15,12 @@ class CreateBlogsTable extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->string('img_url');
             $table->string('content');
             $table->timestamps();
             $table->softDeletes();
-
-            // id int [pk]
-            // user_id int
-            // title varchar
-            // img_url varchar
-            // content varchar
-            // created_at datetime
-            // updated_at datetime
-            // delete_at datetime
         });
     }
 
