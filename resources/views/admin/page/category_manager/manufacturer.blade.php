@@ -1,13 +1,13 @@
 @extends('admin.index')
 
 @section('header')
-    <title>Quản lý danh mục</title>
+    <title>Quản lý nhà sản xuất</title>
 @endsection
 
 @section('content')
                 <div class="ibox">
                     <div class="ibox-head">
-                        <div class="ibox-title">Quản lí danh mục</div>
+                        <div class="ibox-title">Quản lí nhà sản xuất</div>
                     </div>
                     <div class="ibox-body">
                         <div class="table-responsive">
@@ -16,7 +16,8 @@
                                     <tr>
                                         <th width="50px"></th>
                                         <th>ID</th>
-                                        <th>Tên danh mục </th>
+                                        <th>Tên nhà sản xuất</th>
+                                        <th>Tên danh mục</th>
                                         <th>Ngày tạo</th>
                                         <th>Ngày sửa</th>
                                         <th>Ngày xóa</th>
@@ -32,6 +33,7 @@
                                             </label>
                                         </td>
                                         <td>1</td>
+                                        <td>Iphone</td>
                                         <td>Điện thoại</td>
                                         <td>21/3/2023</td>
                                         <td>21/3/2023</td>

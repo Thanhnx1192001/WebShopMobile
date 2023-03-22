@@ -1,13 +1,13 @@
 @extends('admin.index')
 
 @section('header')
-    <title>Quản lý danh mục</title>
+    <title>Quản lý phản hồi người dùng</title>
 @endsection
 
 @section('content')
                 <div class="ibox">
                     <div class="ibox-head">
-                        <div class="ibox-title">Quản lí danh mục</div>
+                        <div class="ibox-title">Quản lí phản hồi người dùng</div>
                     </div>
                     <div class="ibox-body">
                         <div class="table-responsive">
@@ -16,7 +16,12 @@
                                     <tr>
                                         <th width="50px"></th>
                                         <th>ID</th>
-                                        <th>Tên danh mục </th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Tên người bình luận</th>
+                                        <th>Email</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Nội dung</th>
+                                        <th>Đánh giá</th>
                                         <th>Ngày tạo</th>
                                         <th>Ngày sửa</th>
                                         <th>Ngày xóa</th>
@@ -32,7 +37,12 @@
                                             </label>
                                         </td>
                                         <td>1</td>
-                                        <td>Điện thoại</td>
+                                        <td>Iphone 11 pro max</td>
+                                        <td>Duyệt</td>
+                                        <td>duyet@gmail.com</td>
+                                        <td>0123345667</td>
+                                        <td>Máy rất đẹp</td>
+                                        <td>5</td>
                                         <td>21/3/2023</td>
                                         <td>21/3/2023</td>
                                         <td>21/3/2023</td>
