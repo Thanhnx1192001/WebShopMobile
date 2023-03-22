@@ -1,4 +1,9 @@
 @extends('admin.index')
+
+@section('header')
+    <title>Trang chủ</title>
+@endsection
+
 @section('content')
     <div class="page-content fade-in-up">
                 <div class="row">

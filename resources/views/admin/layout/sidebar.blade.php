@@ -9,17 +9,20 @@
                 </div>
                 <ul class="side-menu metismenu">
                     <li>
-                        <a class="active" href="{{route('admin_dashboard')}}"><i class="sidebar-item-icon fa fa-th-large"></i>
-                            <span class="nav-label">Dashboard</span>
+                        <a href="{{route('admin_home')}}"><i class="sidebar-item-icon fa fa-th-large"></i>
+                            <span class="nav-label">Trang chủ</span>
                         </a>
                     </li>
-                    <li class="heading">FEATURES</li>
+                    <li class="heading">Chức năng </li>
                     <li>
                         <a href="javascript:;"><i class="sidebar-item-icon fa fa-bookmark"></i>
                             <span class="nav-label">Quản trị danh mục</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="{{route('admin_category')}}">Loại danh mục</a>
+                                <a href="{{route('admin_category')}}">Phân loại</a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin_manufacturer')}}">Nhà sản xuất</a>
                             </li>
                             <li>
                                 <a href="{{route('admin_product')}}">Sản phẩm</a>
@@ -34,16 +37,10 @@
                             <span class="nav-label">Quản trị giao diện</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="">Hình ảnh</a>
+                                <a href="{{route('admin_img')}}">Hình ảnh</a>
                             </li>
                             <li>
-                                <a href="">Hỗ trợ trực tuyến</a>
-                            </li>
-                            <li>
-                                <a href="">Thông tin</a>
-                            </li>
-                            <li>
-                                <a href="">Nội dung khác</a>
+                                <a href="{{route('admin_banner')}}">Banner</a>
                             </li>
                         </ul>
                     </li>
@@ -53,10 +50,10 @@
                             <span class="nav-label">Quản trị thông tin</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="">Danh sách đơn hàng</a>
+                                <a href="{{route('admin_order')}}">Đơn hàng</a>
                             </li>
                             <li>
-                                <a href="">Khách hàng liên hệ</a>
+                                <a href="{{route('admin_feed_back')}}">Phản hồi của người dùng</a>
                             </li>
                         </ul>
                     </li>
@@ -66,16 +63,13 @@
                             <span class="nav-label">Cấu hình User</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="">Quản lý user</a>
+                                <a href="{{route('admin_profile')}}">Tài khoản</a>
                             </li>
                             <li>
-                                <a href="">Danh sách quyền</a>
+                                <a href="{{route('admin_user')}}">Quản lý user</a>
                             </li>
                             <li>
-                                <a href="">Thông tin user</a>
-                            </li>
-                            <li>
-                                <a href="">Đăng xuất</a>
+                                <a href="{{route('login')}}">Đăng xuất</a>
                             </li>
                         </ul>
                     </li>
