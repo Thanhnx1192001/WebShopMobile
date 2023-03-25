@@ -21,8 +21,8 @@
                                 <div class="m-t-20">
                                     <img class="img-circle" src="./assets/img/admin-avatar.png" />
                                 </div>
-                                <h5 class="font-strong m-b-10 m-t-10">Xuan Thanh</h5>
-                                <div class="m-b-20 text-muted">Web Developer</div>
+                                <h5 class="font-strong m-b-10 m-t-10">{{ Auth::user()->name }}</h5>
+                                <div class="m-b-20 text-muted">Administrator</div>
                             </div>
                         </div>
                     </div>

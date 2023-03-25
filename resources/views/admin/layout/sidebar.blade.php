@@ -5,7 +5,7 @@
                         <img src="./assets/img/admin-avatar.png" width="45px" />
                     </div>
                     <div class="admin-info">
-                        <div class="font-strong">Xuan Thanh </div><small> Administrator </small></div>
+                        <div class="font-strong">{{ Auth::user()->name }} </div><small> Administrator </small></div>
                 </div>
                 <ul class="side-menu metismenu">
                     <li>
@@ -69,7 +69,14 @@
                                 <a href="{{route('admin_user')}}">Quản lý user</a>
                             </li>
                             <li>
-                                <a href="{{route('login')}}">Đăng xuất</a>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Đăng xuất') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf 
+                                </form> 
                             </li>
                         </ul>
                     </li>

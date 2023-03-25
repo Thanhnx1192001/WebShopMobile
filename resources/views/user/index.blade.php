@@ -8,6 +8,8 @@
     <script src="{{asset('js/googletagmanager_1.js')}}" type="text/javascript"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120672636-1"></script>
     <script src="{{asset('js/googletagmanager_2.js')}}" type="text/javascript"></script>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}" defer></script>
     @yield('meta')
     @yield('link')
     @yield('css')

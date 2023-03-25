@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 
-class UserTableSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -21,13 +21,13 @@ class UserTableSeeder extends Seeder
         $limit = 10;
 
         for ($i = 0; $i < $limit; $i++){
-            DB::table('user')->insert([
+            DB::table('users')->insert([
                 'role' => rand(0,1),
-                'fullname' => $fake->name,
+                'name' => $fake->name,
                 'email' => $fake->unique->email,
                 'phone_number' => $fake->phoneNumber,
                 'address' => $fake->address,
-                'password' => bcrypt($fake->numerify($string = '######')),
+                'password' => bcrypt('thanh0123'),
                 
             ]);
         }

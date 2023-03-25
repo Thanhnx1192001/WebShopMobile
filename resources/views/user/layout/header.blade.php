@@ -9,7 +9,44 @@
                         </form>
                         <ul class="header-icon">
                             <li class="hidden-sm hidden-xs"> <a href="tel:0961 273 979" class="icon-hotline"> <small>Gọi mua hàng</small> <b>0961 273 979</b> </a> </li>
-                            <li class="menu-member hidden-sm hidden-xs"> <a href="{{route('login')}}" class="icon-user">Đăng nhập</a></li>
+                            <!-- <li class="menu-member hidden-sm hidden-xs"> <a href="{{route('login')}}" class="icon-user">Đăng nhập</a></li> -->
+
+                               
+                            @guest
+                            @if (Route::has('login'))
+                                <li class="menu-member hidden-sm hidden-xs">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="menu-member hidden-sm hidden-xs">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Đăng kí') }}</a>
+                                </li>
+                            @endif
+                            @else
+                                <li class="menu-member hidden-sm hidden-xs"> <a href="/tai-khoan.html" class="icon-user">Thành viên</a>
+                                    <div class="member-widget-wrap">
+                                        <ul class="member-widget">
+                                            <li class="avatar-thumb"> <span class="img"><img src="https://mobileworld.com.vn/uploads/noavatar.png" alt="{{ Auth::user()->name }}"></span> <span class="username">{{ Auth::user()->name }}</span> </li>
+                                            <li class="item"><a href="">Thông tin tài khoản</a></li>
+                                            <li class="item"><a href="">Quản lý đơn hàng</a></li>
+                                            <li class="item"><a href="">Đổi mật khẩu</a></li>
+                                            <li class="item ">
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                                                    {{ __('Đăng xuất') }}
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf 
+                                                </form> 
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li> 
+                            @endguest    
+
                             <li class="hidden-md hidden-sm hidden-xs"> <a href="{{route('order_check')}}" class="icon-order">KT đơn hàng</a></li>
                             <li id="order-widget" class="mini-cart-box box-order-widget"> <a href="{{route('cart')}}" class="icon-cart"> <span class="hidden-xs">Giỏ hàng</span> <span class="total-items">0</span> </a>
                                 <div class="box-mini-cart hidden-xs">
