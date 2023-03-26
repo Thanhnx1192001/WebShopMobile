@@ -78,11 +78,18 @@
                     <li class="dropdown dropdown-user">
                         <a class="nav-link dropdown-toggle link" data-toggle="dropdown">
                             <img src="./assets/img/admin-avatar.png" />
-                            <span></span>Xuan Thanh<i class="fa fa-angle-down m-l-5"></i></a>
+                            <span></span>{{ Auth::user()->name }}<i class="fa fa-angle-down m-l-5"></i></a>
                         <ul class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="{{route('admin_profile')}}"><i class="fa fa-user"></i>Tài khoản</a>
                             <li class="dropdown-divider"></li>
-                            <a class="dropdown-item" href="{{route('login')}}"><i class="fa fa-power-off"></i>Đăng xuất</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                        {{ __('Đăng xuất') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf 
+                            </form> 
                         </ul>
                     </li>
                 </ul>
