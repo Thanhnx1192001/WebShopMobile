@@ -15,13 +15,14 @@ class CreateOrdersUsersTable extends Migration
     {
         Schema::create('orders_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->integer('order_id')->unsigned();
-            $table->string('fullname');
+            $table->string('name');
             $table->string('email');
             $table->string('phone_number');
-            $table->string('address');
-            $table->string('note');
+            $table->longText('address');
+            $table->timestamps();
+            $table->softDeletes();
 
             // id int [pk]
             // orders_id int

@@ -15,10 +15,11 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('note');
-            $table->timestamp('order_date');
+            $table->longText('note')->nullable();
             $table->integer('payment');
-            $table->string('status');
+            $table->integer('status');
+            $table->timestamps();
+            $table->softDeletes();
 
             // id int [pk]
             // note varchar

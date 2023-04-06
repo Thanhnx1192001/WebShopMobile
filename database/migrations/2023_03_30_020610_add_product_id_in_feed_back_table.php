@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class EditUsersTable extends Migration
+class AddProductIdInFeedBackTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,8 @@ class EditUsersTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::table('users', function (Blueprint $table) {
-            
-            $table->integer('role')->nullable();
-            $table->string('phone_number')->nullable();
-            $table->longText('address')->nullable();
-            $table->softDeletes();
-            
+        Schema::table('feed_back', function (Blueprint $table) {
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
@@ -31,6 +25,8 @@ class EditUsersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('feed_back', function (Blueprint $table) {
+            //
+        });
     }
 }

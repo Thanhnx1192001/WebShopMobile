@@ -16,7 +16,6 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('manufacturer_id')->unsigned();
-            $table->integer('thumbnail_id')->unsigned();
             $table->string('main_img');
             $table->string('title');
             $table->string('color');
@@ -24,8 +23,8 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->integer('discount');
             $table->integer('quantity');
-            $table->string('description_summary');
-            $table->string('description_detailed');
+            $table->longText('description_summary');
+            $table->longText('description_detailed');
             $table->timestamps();
             $table->softDeletes();
         });
