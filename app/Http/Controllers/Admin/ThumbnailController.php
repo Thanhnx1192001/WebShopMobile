@@ -47,7 +47,6 @@ class ThumbnailController extends Controller
      */
     public function store(Request $request)
     {
-        try {
             $request->validate(
                 [
                 'title' => 'required|max:255',
@@ -74,9 +73,6 @@ class ThumbnailController extends Controller
             $thumbnails->thumbnail_url = $newPath;
             $thumbnails->save();
             return redirect('admin_thumbnail')->with('success', 'thêm hình ảnh thành công!');
-        } catch (Exception $e) {
-            dd($e-> getMessage());
-        }
     }
 
     /**
@@ -118,7 +114,6 @@ class ThumbnailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try {
             $request->validate(
                 [
                 'title' => 'required|max:255',
@@ -143,10 +138,6 @@ class ThumbnailController extends Controller
             $thumbnails->thumbnail_url = $newPath;
             $thumbnails->save();
             return redirect('admin_thumbnail')->with('success', 'Sửa hình ảnh thành công!');
-        } catch (Exception $e) {
-            dd($e-> getMessage());
-        }
-        
     }
 
     /**
