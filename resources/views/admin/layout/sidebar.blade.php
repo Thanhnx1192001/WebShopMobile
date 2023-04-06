@@ -19,16 +19,16 @@
                             <span class="nav-label">Quản trị danh mục</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="{{route('admin_category')}}">Phân loại</a>
+                                <a href="{{route('admin_category.index')}}">Phân loại</a>
                             </li>
                             <li>
-                                <a href="{{route('admin_manufacturer')}}">Nhà sản xuất</a>
+                                <a href="{{route('admin_manufacturer.index')}}">Nhà sản xuất</a>
                             </li>
                             <li>
-                                <a href="{{route('admin_product')}}">Sản phẩm</a>
+                                <a href="{{route('admin_product.index')}}">Sản phẩm</a>
                             </li>
                             <li>
-                                <a href="{{route('admin_blog')}}">Bài viêt</a>
+                                <a href="{{route('admin_blog.index')}}">Bài viêt</a>
                             </li>
                         </ul>
                     </li>
@@ -37,23 +37,29 @@
                             <span class="nav-label">Quản trị giao diện</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="{{route('admin_img')}}">Hình ảnh</a>
+                                <a href="{{route('admin_thumbnail.index')}}">Quản lí hình ảnh</a>
                             </li>
                             <li>
-                                <a href="{{route('admin_banner')}}">Banner</a>
+                                <a href="{{route('admin_banner.index')}}">Banner</a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin_feed_back.index')}}">Phản hồi của người dùng</a>
                             </li>
                         </ul>
                     </li>
 
                     <li>
                         <a href="javascript:;"><i class="sidebar-item-icon ti-comment-alt"></i>
-                            <span class="nav-label">Quản trị thông tin</span><i class="fa fa-angle-left arrow"></i></a>
+                            <span class="nav-label">Quản trị đơn hàng</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="{{route('admin_order')}}">Đơn hàng</a>
+                                <a href="{{route('admin_order.index')}}">Đơn hàng</a>
                             </li>
                             <li>
-                                <a href="{{route('admin_feed_back')}}">Phản hồi của người dùng</a>
+                                <a href="{{route('admin_order_detail.index')}}">Chi tiết đơn hàng</a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin_order_user.index')}}">Thông tin người mua hàng</a>
                             </li>
                         </ul>
                     </li>
@@ -66,7 +72,7 @@
                                 <a href="{{route('admin_profile')}}">Tài khoản</a>
                             </li>
                             <li>
-                                <a href="{{route('admin_user')}}">Quản lý user</a>
+                                <a href="{{route('admin_user.index')}}">Quản lý user</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}"

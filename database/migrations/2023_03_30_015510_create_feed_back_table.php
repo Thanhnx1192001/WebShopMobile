@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateThumbnailsTable extends Migration
+class CreateFeedBackTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,16 @@ class CreateThumbnailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('thumbnails', function (Blueprint $table) {
+        Schema::create('feed_back', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_id')->unsigned();
-            $table->string('title');
-            $table->string('thumbnail_url');
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone_number');
+            $table->longText('content');
+            $table->integer('star');
             $table->timestamps();
             $table->softDeletes();
-
-            // id int [pk]
-            // product_id int
-            // thumbnail_url varchar
-            // created_at datetime
-            // updated_at datetime
-            // delete_at datetime
         });
     }
 
@@ -37,6 +33,6 @@ class CreateThumbnailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('thumbnails');
+        Schema::dropIfExists('feed_back');
     }
 }

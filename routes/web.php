@@ -1,5 +1,16 @@
 <?php
 
+use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\FeedBackController;
+use App\Http\Controllers\Admin\ManufacturerController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\OrderDetailController;
+use App\Http\Controllers\Admin\OrderUserController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ThumbnailController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -52,43 +63,30 @@ Route::middleware(['auth', 'checkrole'])->group(function () {
     Route::get('/admin_home', function () {
         return view('admin.page.home.home');
     })->name('admin_home');
+    
+    Route::resource('admin_category', CategoryController::class);
 
-    Route::get('/admin_category', function () {
-        return view('admin.page.category_manager.category');
-    })->name('admin_category');
+    Route::resource('admin_manufacturer', ManufacturerController::class);
 
-    Route::get('/admin_manufacturer', function () {
-        return view('admin.page.category_manager.manufacturer');
-    })->name('admin_manufacturer');
+    Route::resource('admin_product', ProductController::class);
 
-    Route::get('/admin_product', function () {
-        return view('admin.page.category_manager.product');
-    })->name('admin_product');
+    Route::resource('admin_blog', BlogController::class);
 
-    Route::get('/admin_blog', function () {
-        return view('admin.page.category_manager.blog');
-    })->name('admin_blog');
+    Route::resource('admin_order', OrderController::class);
 
-    Route::get('/admin_order', function () {
-        return view('admin.page.information_manager.order');
-    })->name('admin_order');
+    Route::resource('admin_order_detail', OrderDetailController::class);
 
-    Route::get('/admin_feed_back', function () {
-        return view('admin.page.information_manager.feed_back');
-    })->name('admin_feed_back');
+    Route::resource('admin_order_user', OrderUserController::class);
 
-    Route::get('/admin_banner', function () {
-        return view('admin.page.interface_manager.banner');
-    })->name('admin_banner');
+    Route::resource('admin_feed_back', FeedBackController::class);
 
-    Route::get('/admin_img', function () {
-        return view('admin.page.interface_manager.img');
-    })->name('admin_img');
+    Route::resource('admin_banner', BannerController::class);
 
-    Route::get('/admin_user', function () {
-        return view('admin.page.user_manager.user');
-    })->name('admin_user');
+    Route::resource('admin_thumbnail', ThumbnailController::class);
 
+    Route::resource('admin_user', UserController::class);
+
+    
     Route::get('/admin_profile', function () {
         return view('admin.page.user_manager.profile');
     })->name('admin_profile');
@@ -106,5 +104,6 @@ Route::post('/logout', function () {
     Auth::logout();
     return redirect('/home');
 })->name('logout');
+
 
 

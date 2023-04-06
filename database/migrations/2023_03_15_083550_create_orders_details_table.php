@@ -18,6 +18,8 @@ class CreateOrdersDetailsTable extends Migration
             $table->integer('order_id')->unsigned();
             $table->integer('product_id')->unsigned();
             $table->integer('num');
+            $table->timestamps();
+            $table->softDeletes();
 
 
             // id int [pk]

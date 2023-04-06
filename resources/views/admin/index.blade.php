@@ -10,7 +10,23 @@
     <link href="{{asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/vendors/themify-icons/css/themify-icons.css')}}" rel="stylesheet" />
-    
+    <style>
+        .btn-delete{
+            width: 70px;
+        }
+        .btn-edit{
+            width: 70px;
+        }
+        .btn-show{
+            width: 70px;
+        }
+        td {
+            text-align: center;
+        }
+        th {
+            text-align: center;
+        }
+    </style>
     <!-- PLUGINS STYLES-->
     <link href="{{asset('assets/vendors/jvectormap/jquery-jvectormap-2.0.3.css')}}" rel="stylesheet" />
     <!-- THEME STYLES-->
@@ -31,14 +47,14 @@
         <div class="content-wrapper">
             <!-- START PAGE CONTENT-->
 
-            @yield('content')
+        @yield('content')
 
             <!-- END PAGE CONTENT-->
-            @include('admin.layout.footer')
+        @include('admin.layout.footer')
         </div>
     </div>
     <!-- BEGIN THEME CONFIG PANEL-->
-    <div class="theme-config">
+    <!-- <div class="theme-config">
         <div class="theme-config-toggle"><i class="fa fa-cog theme-config-show"></i><i class="ti-close theme-config-close"></i></div>
         <div class="theme-config-box">
             <div class="text-center font-18 m-b-20">SETTINGS</div>
@@ -165,7 +181,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- END THEME CONFIG PANEL-->
     <!-- BEGIN PAGA BACKDROPS-->
     <div class="sidenav-backdrop backdrop"></div>
@@ -188,6 +204,7 @@
     <script src="{{asset('assets/js/app.min.js')}}" type="text/javascript"></script>
     <!-- PAGE LEVEL SCRIPTS-->
     <script src="{{asset('assets/js/scripts/dashboard_1_demo.js')}}" type="text/javascript"></script>
+    @yield('js')
 </body>
 
 </html>
