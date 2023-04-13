@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\OrderUserController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ThumbnailController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\User\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -98,7 +99,7 @@ Route::middleware(['auth', 'checkrole'])->group(function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::post('/logout', function () {
     Auth::logout();

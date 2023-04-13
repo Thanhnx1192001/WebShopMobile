@@ -120,23 +120,24 @@ class BlogController extends Controller
             [
             'user_id' => 'required',
             'title' => 'required|max:255',
-            'img_url' => 'required',
             'content' => 'required',
 
             ],
             [
             'title.required'=>'Tên không được để trống',
             'title.max'=>'Tên không được vượt quá 255 kí tự',
-            'img_url.required'=>'Link ảnh không được để trống',
             'content.required'=>'Nội dung không được để trống',
             ]
         );
-        $path = $request->file('img_url')->store('images', 'public');
-        $newPath = 'storage/' .$path;
         $blogs = blogs::find($id);
+        if ($request->hasFile('img_url')){
+            $path = $request->file('img_url')->store('images', 'public');
+            $newPath = 'storage/' .$path;
+            $blogs->img_url = $newPath;
+
+        }
         $blogs->user_id = $request->user_id;
         $blogs->title = $request->title;
-        $blogs->img_url = $newPath;
         $blogs->content = $request->content;
         $blogs->save();
         return redirect('admin_blog')->with('success', 'Sửa bài viết thành công!');

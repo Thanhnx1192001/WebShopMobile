@@ -15,8 +15,8 @@
 
 @font-face {
     font-family: FontAwesome;
-    src: url(/ws-content/themes/mobileworld/assets/fonts/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0);
-    src: url(/ws-content/themes/mobileworld/assets/fonts/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0) format('embedded-opentype'), url(/ws-content/themes/mobileworld/assets/fonts/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0) format('woff2'), url(/ws-content/themes/mobileworld/assets/fonts/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0) format('woff'), url(/ws-content/themes/mobileworld/assets/fonts/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0) format('truetype'), url(/ws-content/themes/mobileworld/assets/fonts/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg');
+    src: url(../../assets/img/assets/font/fontawesome-webfont.woff?v=4.7.0);
+    src: url(../../assets/img/assets/font/fontawesome-webfont.woff?#iefix&v=4.7.0) format('embedded-opentype'), url(../../assets/img/assets/font/fontawesome-webfont.woff2?v=4.7.0) format('woff2'), url(/ws-content/themes/mobileworld/assets/fonts/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0) format('woff'), url(/ws-content/themes/mobileworld/assets/fonts/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0) format('truetype'), url(/ws-content/themes/mobileworld/assets/fonts/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -11122,7 +11122,7 @@ button.close {
     background-color: #000\9;
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid #fff;
-    border-radius: 10px
+    border-radius: 10px;
 }
 
 .carousel-indicators .active {
@@ -14433,7 +14433,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 25px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-iphone.png) no-repeat;
+    background: url(../../assets/img/icon-iphone.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14455,7 +14455,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 30px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-samsung.png) no-repeat;
+    background: url(../../assets/img/icon-samsung.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14477,7 +14477,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 30px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-google.png) no-repeat;
+    background: url(../../assets/img/icon-google.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14499,7 +14499,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 30px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-phone-other.png) no-repeat;
+    background: url(../../assets/img/icon-phone-other.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14521,7 +14521,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 30px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-gaming.png) no-repeat;
+    background: url(../../assets/img/icon-gaming.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14543,7 +14543,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 30px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-tablet.png) no-repeat;
+    background: url(../../assets/img/icon-tablet.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14565,7 +14565,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 30px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-watch.png) no-repeat;
+    background: url(../../assets/img/icon-watch.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14587,7 +14587,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 25px;
     position: absolute;
     left: calc(50% - 14px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-news.png) no-repeat;
+    background: url(../../assets/img/icon-news.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14627,7 +14627,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 34px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-flashsale.png) no-repeat;
+    background: url(../../assets/img/icon-flashsale.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -15645,7 +15645,7 @@ ul.menu-product>li.mouseenter {
     position: absolute;
     align-items: center;
     transform: translateY(-50%);
-    background: var(--c1) url(/ws-content/themes/mobileworld/assets/images/icon-search.png) no-repeat center center;
+    background: var(--c1) url(../../assets/img/icon-search.png) no-repeat center center;
     background-size: 25px 25px;
 }
 
@@ -15698,7 +15698,7 @@ ul.menu-product>li.mouseenter {
     border-radius: 30px;
     align-items: center;
     padding: 10px 15px 10px 45px;
-    background: var(--c1) url(/ws-content/themes/mobileworld/assets/images/icon-call-white.png) no-repeat 14px 14px;
+    background: var(--c1) url(../../assets/img/icon-call-white.png) no-repeat 14px 14px;
     background-size: 25px 25px;
 }
 
@@ -15713,17 +15713,17 @@ ul.menu-product>li.mouseenter {
 }
 
 #ws-header .header-icon>li>a.icon-order {
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-order.png) no-repeat top center;
+    background: url(../../assets/img/icon-order.png) no-repeat top center;
     background-size: 40px 24px;
 }
 
 #ws-header .header-icon>li>a.icon-user {
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-user.png) no-repeat top center;
+    background: url(../../assets/img/icon-user.png) no-repeat top center;
     background-size: 25px 25px;
 }
 
 #ws-header .header-icon>li>a.icon-cart {
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-cart.png) no-repeat top center;
+    background: url(../../assets/img/icon-cart.png) no-repeat top center;
     background-size: 30px 30px;
 }
 
@@ -15891,7 +15891,7 @@ ul.menu-product>li.mouseenter {
 #ws-footer .footer-contact .footer-title {
     color: white;
     padding-left: 45px;
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-call.png) no-repeat left center;
+    background: url(../../assets/img/icon-call.png) no-repeat left center;
     background-size: 35px 35px;
     margin-bottom: 25px;
 }

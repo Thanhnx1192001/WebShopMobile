@@ -43,9 +43,10 @@ class BannerController extends Controller
             [
             'title' => 'required|max:255',
             'img_url' => 'required',
-
+            'link' => 'required',
             ],
             [
+            'link.required'=>'Link không được để trống',
             'title.required'=>'Tên không được để trống',
             'title.max'=>'Tên không được vượt quá 255 kí tự',
             'img_url.required'=>'Link ảnh không được để trống',
@@ -55,6 +56,8 @@ class BannerController extends Controller
         $newPath = 'storage/' .$path;
         $banners = new banners();
         $banners->title = $request->title;
+        $banners->type = $request->type;
+        $banners->link = $request->link;
         $banners->img_url = $newPath;
         $banners->save();
         return redirect('admin_banner')->with('success', 'Thêm banner thành công!');
@@ -82,9 +85,9 @@ class BannerController extends Controller
      */
     public function edit($id)
     {
-        $banners = banners::find($id);
+        $banner = banners::find($id);
         return view('admin.page.interface_manager.banner.edit',[ 
-            'banners' => $banners,
+            'banner' => $banner,
         ]);
     }
 
@@ -100,22 +103,26 @@ class BannerController extends Controller
         $request->validate(
             [
             'title' => 'required|max:255',
-            'img_url' => 'required|mimes:jpeg,png,webp|max:2048',
-
+            'img_url' => 'mimes:jpeg,png,webp|max:2048',
+            'link' => 'required',
             ],
             [
+            'link.required'=>'Link không được để trống',
             'img_url.mimes'=>'Ảnh phải đúng định dạng',
             'img_url.max'=>'Ảnh không được lớn hơn 2M',
-            'title.required'=>'Tên không được để trống',
             'title.max'=>'Tên không được vượt quá 255 kí tự',
             'img_url.required'=>'Link ảnh không được để trống',
             ]
         );
-        $path = $request->file('img_url')->store('images', 'public');
-        $newPath = 'storage/' .$path;
         $banners = banners::find($id);
+        if ($request->hasFile('img_url')){
+            $path = $request->file('img_url')->store('images', 'public');
+            $newPath = 'storage/' .$path;
+            $banners->img_url = $newPath;
+        }
         $banners->title = $request->title;
-        $banners->img_url = $newPath;
+        $banners->type = $request->type;
+        $banners->link = $request->link;
         $banners->save();
         return redirect('admin_banner')->with('success', 'Sửa banner thành công!');
     }

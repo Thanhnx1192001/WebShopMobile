@@ -20,7 +20,13 @@
                                 <div class="form-group">
                                         <select class="form-control" name="manufacturer_id">
                                             @foreach($manufacturers as $row)
-                                            <option value="{{$row->id}}">{{$row->name}}</option>
+                                            <option value="{{$row->id}}">{{$row->name}} - 
+                                            @foreach($categories as $row1)
+                                            @if($row->category_id == $row1->id)
+                                            {{$row1->name}} 
+                                            @endif 
+                                            @endforeach
+                                            </option>
                                             @endforeach
                                         </select>
                                 </div>
