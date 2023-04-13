@@ -13,19 +13,39 @@
                         </div>
                     </div>
                     <div class="ibox-body">
-                        <form action="{{route('admin_banner.update',$banners->id)}}" method="post" class="form-horizontal" enctype="multipart/form-data">
+                        <form action="{{route('admin_banner.update',$banner->id)}}" method="post" class="form-horizontal" enctype="multipart/form-data">
 							@method('PATCH')
                             @csrf
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Tên banner</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="text" name="title" value="{{$banners->title}}">
+                                    <input class="form-control" type="text" name="title" value="{{$banner->title}}">
                                 </div>
                                 @if ($errors->has('title'))
                                     <small class="form-text text-muted">{{ $errors->first('title') }}</small>
                                 @endif
                             </div>
-
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Kiểu banner</label>
+                                <div class="form-group">
+                                    <select class="form-control" name="type">
+                                        <option {{ $banner->type == 0 ? 'selected' : ''}} value= '0' >Banner phụ</option>
+                                        <option {{ $banner->type == 1 ? 'selected' : ''}} value= '1' >Banner chính</option>
+                                    </select>
+                                </div>
+                                @if ($errors->has('type'))
+                                    <small class="form-text text-muted">{{ $errors->first('type') }}</small>
+                                @endif
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Link banner</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" name="link" value="{{$banner->link}}">
+                                </div>
+                                @if ($errors->has('link'))
+                                    <small class="form-text text-muted">{{ $errors->first('link') }}</small>
+                                @endif
+                            </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Link ảnh</label>
                                 <div class="col-sm-10">

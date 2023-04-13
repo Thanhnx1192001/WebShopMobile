@@ -20,8 +20,10 @@
                                 <thead>
                                     <tr>
                                         <th>STT</th>
+                                        <th>Kiểu banner</th>
                                         <th>Tên banner</th>
                                         <th>Ảnh</th>
+                                        <th>Link</th>
                                         <th>Chức năng</th>
                                     </tr>
                                 </thead>
@@ -29,8 +31,14 @@
                                     @foreach($banners as $row)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
+                                        @if($row ->type == 1)
+                                            <td>Banner chính</td>
+                                        @else
+                                            <td>Banner phụ</td>
+                                        @endif
                                         <td>{{$row ->title}}</td>
                                         <td><img style="max-width: 300px; max-height: 300px;" src="{{asset($row->img_url)}}"></td>
+                                        <td><a href="{{$row ->link}}">Link</a></td>
                                         <td>
                                         <div class="btn-group">
 								            <a href="{{route('admin_banner.edit',$row->id)}}" class="btn btn-warning btn-edit">Sửa</a>

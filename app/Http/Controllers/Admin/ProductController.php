@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\categories;
 use App\Models\manufacturers;
 use App\Models\products;
 use App\Models\thumbnails;
@@ -34,10 +35,12 @@ class ProductController extends Controller
         $products = products::orderBy('id','ASC')->paginate(10);
         $manufacturers= manufacturers::all();
         $thumbnails = thumbnails::all();
+        $categories = categories::all();
         return view('admin.page.category_manager.product.add',[ 
             'products' => $products,
             'manufacturers' => $manufacturers,
             'thumbnails' => $thumbnails,
+            'categories' => $categories,
         ]);
     }
 
@@ -140,7 +143,7 @@ class ProductController extends Controller
         $request->validate(
             [
             'manufacturer_id' => 'required',
-            'main_img' => 'required|file|mimes:jpeg,png,webp|max:2048',
+            'main_img' => 'file|mimes:jpeg,png,webp|max:2048',
             'title' => 'required',
             'color' => 'required',
             'memory' => 'required',
@@ -153,7 +156,6 @@ class ProductController extends Controller
             [
             'main_img.mimes'=>'Ảnh phải đúng định dạng',
             'main_img.max'=>'Ảnh không được lớn hơn 2M',
-            'main_img.required'=>'Link ảnh không được để trống',
             'title.required'=>'Tên sản phẩm không được để trống',
             'color.required'=>'Màu sắc không được để trống',
             'memory.required'=>'Bộ nhớ không được để trống',
@@ -164,11 +166,13 @@ class ProductController extends Controller
             'description_detailed.required'=>'Mô tả chi tiết không được để trống',
             ]
         );
-        $path = $request->file('main_img')->store('images', 'public');
-        $newPath = 'storage/' .$path;
         $products = products::find($id);
+        if ($request->hasFile('main_img')){
+            $path = $request->file('main_img')->store('images', 'public');
+            $newPath = 'storage/' .$path;
+            $products->main_img = $newPath;
+        }
         $products->manufacturer_id = $request->manufacturer_id;
-        $products->main_img = $newPath;
         $products->title = $request->title;
         $products->color = $request->color;
         $products->memory = $request->memory;
