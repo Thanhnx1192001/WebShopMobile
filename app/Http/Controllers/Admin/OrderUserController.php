@@ -17,12 +17,43 @@ class OrderUserController extends Controller
      */
     public function index()
     {
-        $orders_users = orders_users::orderBy('id','ASC')->paginate(10);
+        $orders_users = orders_users::all();
         $orders = orders::all();
+        $order_user = '';
         return view('admin.page.order_manager.order_user.order_user',[ 
             'orders_users' => $orders_users,
             'orders' => $orders,
+            'order_user' => $order_user,
+
         ]);
+    }
+    public function admin_order_user_search(Request $request)
+    {
+        $orders_users = orders_users::all();
+        $orders = orders::all();
+        $code = $request->code;
+        $pattern = '/^\d{8}-\d+$/';
+        if (preg_match($pattern, $code)) {
+        }
+        else{
+            return redirect('admin_order_user')->with('success', 'Đơn hàng không tồn tại!');
+        }
+        $parts = explode("-", $code);
+        $charactersBeforeDash = $parts[0];
+        $id = $parts[1];
+        $order = orders::find($id);
+        $formattedDate = date('Ymd', strtotime($order->created_at));
+        if($order and  $formattedDate == $charactersBeforeDash){
+            $order_user = orders_users::where('order_id',$order->id)->first(); 
+            return view('admin.page.order_manager.order_user.order_user',[
+                'orders_users' => $orders_users,
+                'orders' => $orders,
+                'order_user' => $order_user,
+            ]);
+        }
+        else{
+            return redirect('admin_order_user')->with('success', 'Đơn hàng không tồn tại!');
+        }
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\orders;
 use App\Models\orders_details;
+use App\Models\orders_users;
 use App\Models\products;
 use Illuminate\Http\Request;
 
@@ -19,9 +20,13 @@ class OrderDetailController extends Controller
     {
         $orders = orders::all();
         $products = products::all();
-        $orders_details = orders_details::orderBy('id','ASC')->paginate(10);
+        $orders_details = orders_details::all();
+        $orders_users = orders_users::all();
+        $order ='';
         return view('admin.page.order_manager.order_detail.order_detail',[ 
+            'order' => $order,
             'orders_details' => $orders_details,
+            'orders_users' => $orders_users,
             'orders' => $orders,
             'products' => $products,
         ]);
@@ -32,6 +37,37 @@ class OrderDetailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function admin_order_detail_search(Request $request)
+    {
+        $orders = orders::all();
+        $products = products::all();
+        $orders_details = orders_details::all();
+        $orders_users = orders_users::all();
+        $code = $request->code;
+        $pattern = '/^\d{8}-\d+$/';
+        if (preg_match($pattern, $code)) {
+        }
+        else{
+            return redirect('admin_order_detail')->with('success', 'Đơn hàng không tồn tại!');
+        }
+        $parts = explode("-", $code);
+        $charactersBeforeDash = $parts[0];
+        $id = $parts[1];
+        $order = orders::find($id);
+        $formattedDate = date('Ymd', strtotime($order->created_at));
+        if($order and  $formattedDate == $charactersBeforeDash){
+            return view('admin.page.order_manager.order_detail.order_detail',[
+                'order' => $order,
+                'orders_details' => $orders_details,
+                'orders_users' => $orders_users,
+                'orders' => $orders,
+                'products' => $products,
+            ]);
+        }
+        else{
+            return redirect('admin_order_detail')->with('success', 'Đơn hàng không tồn tại!');
+        }
+    }
     public function create()
     {
         $orders_details = orders_details::all();

@@ -1,7 +1,7 @@
 @extends('admin.index')
 
 @section('header')
-    <title>Thêm danh mục</title>
+    <title>Thêm</title>
 @endsection
 
 @section('content')

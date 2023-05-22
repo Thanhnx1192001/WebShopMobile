@@ -4,8 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\orders;
+use App\Models\orders_details;
 use App\Models\orders_users;
+use App\Models\products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class OrderController extends Controller
 {
@@ -16,14 +20,44 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = orders::orderBy('id','ASC')->paginate(10);
-        $orders_users = orders_users::orderBy('id','ASC')->paginate(10);
+        $orders = orders::all();
+        $orders_users = orders_users::all();
+        $order = '';
         return view('admin.page.order_manager.order.order',[ 
             'orders' => $orders,
+            'order' => $order,
             'orders_users' => $orders_users,
         ]);
     }
+    public function admin_order_search(Request $request)
+    {
+        $orders = orders::all();
+        $orders_users = orders_users::all();
+        $code = $request->code;
+        $pattern = '/^\d{8}-\d+$/';
+        if (preg_match($pattern, $code)) {
+        }
+        else{
+            return redirect('admin_order')->with('success', 'Đơn hàng không tồn tại!');
+        }
+        $parts = explode("-", $code);
+        $charactersBeforeDash = $parts[0];
+        $id = $parts[1];
+        $order = orders::find($id);
+        $formattedDate = date('Ymd', strtotime($order->created_at));
+        if($order and  $formattedDate == $charactersBeforeDash){
+            return view('admin.page.order_manager.order.order',[
+                'orders' => $orders,
+                'order' => $order,
+                'orders_users' => $orders_users,
 
+
+            ]);
+        }
+        else{
+            return redirect('admin_order')->with('success', 'Đơn hàng không tồn tại!');
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *

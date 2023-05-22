@@ -77,23 +77,8 @@
                                                 <div class="img"> <a href="/iphone-14-pro-max-128gb-moi-fullbox.html"><img src="https://mobileworld.com.vn/uploads/product/iPhone_14/thumbs/iphone-14-pro-max-spaceblack.webp" width="80" height="80" class="img-cover" alt=""></a>
                                                     <div class="remove"> <button type="button" class="remove-item fa-trash-o"></button> </div>
                                                 </div>
-                                                <div class="txt"> <a href="/iphone-14-pro-max-128gb-moi-fullbox.html">iPhone 14 Pro Max 128GB Mới Fullbox</a>
-                                                    <div class="dropdown select-option"><button type="button" data-toggle="dropdown" class="dropdown-toggle">Đen<span class="caret"></span></button>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <div class="item active" data-id="24"><img src="https://mobileworld.com.vn/uploads/product/iPhone_14/thumbs/iphone-14-pro-max-spaceblack.webp" width="80" alt="Đen">Đen</div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="item" data-id="31"><img src="https://mobileworld.com.vn/uploads/product/iPhone_14/thumbs/iphone-14-pro-max-silver.webp" width="80" alt="Bạc">Bạc</div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="item" data-id="42"><img src="https://mobileworld.com.vn/uploads/product/iPhone_14/thumbs/iphone-14-pro-max-gold.webp" width="80" alt="Vàng">Vàng</div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="item" data-id="43"><img src="https://mobileworld.com.vn/uploads/product/iPhone_14/thumbs/iphone-14-pro-max-deeppurple.webp" width="80" alt="Tím">Tím</div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                                <div class="txt"> <a href="">iPhone 14 Pro Max 128GB Mới Fullbox</a>
+                                                    <div>Đen </div>
                                                 </div>
                                             </div>
                                         </td>
@@ -177,7 +162,6 @@
 
 @section('js')
     <script id="ws-common-js" language="javascript" type="text/javascript" src="{{asset('js/cart/cart_1.js')}}"></script>
-    <script id="ws-global-js" src="https://mobileworld.com.vn/storage/bundle/mobileworld.min.js?v=230314" language="javascript" type="text/javascript"></script>
     <script src="https://mobileworld.com.vn/ws-content/themes/mobileworld/assets/js/member.js?v=230314" language="javascript" type="text/javascript"></script>
     <script id="ws-order-js" src="https://mobileworld.com.vn/ws-content/themes/mobileworld/assets/js/order.js?v=230314" language="javascript" type="text/javascript"></script>
 @endsection
