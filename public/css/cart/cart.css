@@ -7683,7 +7683,7 @@ tbody.collapse.in {
     top: 100%;
     left: 0;
     z-index: 1000;
-    display: none;
+    display: block;
     float: left;
     min-width: 160px;
     padding: 5px 0;
@@ -13812,7 +13812,7 @@ ul {
     height: 55px;
     width: 165px;
     padding-left: 62px;
-    background: url("/ws-content/themes/mobileworld/assets/images/menu_while.png") left 16px center no-repeat;
+    background: url("../../assets/img/menu_while.png") left 16px center no-repeat;
     background-size: 25px;
     font-size: 14px
 }
@@ -14011,7 +14011,7 @@ ul {
     height: 55px;
     width: 165px;
     padding-left: 62px;
-    background: url("/ws-content/themes/mobileworld/assets/images/menu_while.png") left 16px center no-repeat;
+    background: url("../../assets/img/menu_while.png") left 16px center no-repeat;
     background-size: 25px;
     font-size: 15px
 }
@@ -14208,7 +14208,7 @@ body.open-popup {
 
 .opened .btn-pro-menu {
     outline: none;
-    background: var(--c1) url(/ws-content/themes/mobileworld/assets/images/menu_while.png) no-repeat 15px center;
+    background: var(--c1) url(../../assets/img/menu_while.png) no-repeat 15px center;
     background-size: 20px 20px;
 }
 
@@ -14433,7 +14433,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 25px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-iphone.png) no-repeat;
+    background: url(../../assets/img/icon-iphone.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14455,7 +14455,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 30px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-samsung.png) no-repeat;
+    background: url(../../assets/img/icon-samsung.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14477,7 +14477,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 30px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-google.png) no-repeat;
+    background: url(../../assets/img/icon-google.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14499,7 +14499,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 30px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-phone-other.png) no-repeat;
+    background: url(../../assets/img/icon-phone-other.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14521,7 +14521,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 30px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-gaming.png) no-repeat;
+    background: url(../../assets/img/icon-gaming.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14543,7 +14543,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 30px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-tablet.png) no-repeat;
+    background: url(../../assets/img/icon-tablet.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14565,7 +14565,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 30px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-watch.png) no-repeat;
+    background: url(../../assets/img/icon-watch.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14587,7 +14587,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 25px;
     position: absolute;
     left: calc(50% - 14px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-news.png) no-repeat;
+    background: url(../../assets/img/icon-news.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -14627,7 +14627,7 @@ ul.menu-product>li:hover>.sub-menu {
     height: 34px;
     position: absolute;
     left: calc(50% - 10px);
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-flashsale.png) no-repeat;
+    background: url(../../assets/img/icon-flashsale.png) no-repeat;
     background-size: 100%;
     background-position: 0 0;
     transition: all .3s ease;
@@ -15118,7 +15118,7 @@ ul.pagination li.active:hover span {
 
 .maker.loading::after {
     content: '';
-    background: url("/ws-content/themes/mobileworld/assets/images/loading2.svg") center no-repeat;
+    background: url("../../assets/img/loading2.svg") center no-repeat;
     width: 250px;
     height: 50px;
     top: 50%;
@@ -15223,7 +15223,7 @@ ul.pagination li.active:hover span {
 }
 
 .lightning::before {
-    content: url("/ws-content/themes/mobileworld/assets/images/lightning.png")
+    content: url("../../assets/img/lightning.png")
 }
 
 .effect {
@@ -15645,7 +15645,7 @@ ul.menu-product>li.mouseenter {
     position: absolute;
     align-items: center;
     transform: translateY(-50%);
-    background: var(--c1) url(/ws-content/themes/mobileworld/assets/images/icon-search.png) no-repeat center center;
+    background: var(--c1) url(../../assets/img/icon-search.png) no-repeat center center;
     background-size: 25px 25px;
 }
 
@@ -15698,7 +15698,7 @@ ul.menu-product>li.mouseenter {
     border-radius: 30px;
     align-items: center;
     padding: 10px 15px 10px 45px;
-    background: var(--c1) url(/ws-content/themes/mobileworld/assets/images/icon-call-white.png) no-repeat 14px 14px;
+    background: var(--c1) url(../../assets/img/icon-call-white.png) no-repeat 14px 14px;
     background-size: 25px 25px;
 }
 
@@ -15713,17 +15713,17 @@ ul.menu-product>li.mouseenter {
 }
 
 #ws-header .header-icon>li>a.icon-order {
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-order.png) no-repeat top center;
+    background: url(../../assets/img/icon-order.png) no-repeat top center;
     background-size: 40px 24px;
 }
 
 #ws-header .header-icon>li>a.icon-user {
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-user.png) no-repeat top center;
+    background: url(../../assets/img/icon-user.png) no-repeat top center;
     background-size: 25px 25px;
 }
 
 #ws-header .header-icon>li>a.icon-cart {
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-cart.png) no-repeat top center;
+    background: url(../../assets/img/icon-cart.png) no-repeat top center;
     background-size: 30px 30px;
 }
 
@@ -15754,7 +15754,7 @@ ul.menu-product>li.mouseenter {
     border: 0;
     padding: 0 0 0 80px;
     text-align: left;
-    background: var(--c1) url(/ws-content/themes/mobileworld/assets/images/icon-menu.png) no-repeat 30px center;
+    background: var(--c1) url(../../assets/img/icon-menu.png) no-repeat 30px center;
     background-size: 25px;
 }
 
@@ -15891,7 +15891,7 @@ ul.menu-product>li.mouseenter {
 #ws-footer .footer-contact .footer-title {
     color: white;
     padding-left: 45px;
-    background: url(/ws-content/themes/mobileworld/assets/images/icon-call.png) no-repeat left center;
+    background: url(../../assets/img/icon-call.png) no-repeat left center;
     background-size: 35px 35px;
     margin-bottom: 25px;
 }
@@ -16601,7 +16601,7 @@ ul.menu-product>li.mouseenter {
         margin-right: 10px;
         display: inline-block;
         vertical-align: middle;
-        background: url(/ws-content/themes/mobileworld/assets/images/icon-wishlist-blue.png) no-repeat center center;
+        background: url(../../assets/img/icon-wishlist-blue.png) no-repeat center center;
         background-size: 20px 18px;
     }
 
@@ -16614,7 +16614,7 @@ ul.menu-product>li.mouseenter {
         margin-right: 10px;
         display: inline-block;
         vertical-align: middle;
-        background: url(/ws-content/themes/mobileworld/assets/images/icon-call.png) no-repeat center center;
+        background: url(../../assets/img/icon-call.png) no-repeat center center;
         background-size: 15px 19px;
     }
 
@@ -16649,7 +16649,7 @@ ul.menu-product>li.mouseenter {
     #tab-menu-mobile .mphone-note {
         padding-left: 45px;
         margin-bottom: 20px;
-        background: url(/ws-content/themes/mobileworld/assets/images/icon-call.png) no-repeat left center;
+        background: url(../../assets/img/icon-call.png) no-repeat left center;
         background-size: 35px 35px;
     }
 

@@ -8,12 +8,12 @@
                         <div class="font-strong">{{ Auth::user()->name }} </div><small> Administrator </small></div>
                 </div>
                 <ul class="side-menu metismenu">
-                    <li>
+                    <!-- <li>
                         <a href="{{route('admin_home')}}"><i class="sidebar-item-icon fa fa-th-large"></i>
                             <span class="nav-label">Trang chủ</span>
                         </a>
-                    </li>
-                    <li class="heading">Chức năng </li>
+                    </li> -->
+                    <!-- <li class="heading">Chức năng </li> -->
                     <li>
                         <a href="javascript:;"><i class="sidebar-item-icon fa fa-bookmark"></i>
                             <span class="nav-label">Quản trị danh mục</span><i class="fa fa-angle-left arrow"></i></a>
@@ -36,9 +36,9 @@
                         <a href="javascript:;"><i class="sidebar-item-icon fa fa-bars"></i>
                             <span class="nav-label">Quản trị giao diện</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
-                            <li>
+                            <!-- <li>
                                 <a href="{{route('admin_thumbnail.index')}}">Quản lí hình ảnh</a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="{{route('admin_banner.index')}}">Banner</a>
                             </li>

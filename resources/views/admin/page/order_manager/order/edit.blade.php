@@ -43,6 +43,7 @@
                                             <option {{ $orders->status == '2' ? 'selected' : ''}} value="2">Đã xác nhận</option>
                                             <option {{ $orders->status == '3' ? 'selected' : ''}} value="3">Đang giao hàng</option>
                                             <option {{ $orders->status == '4' ? 'selected' : ''}} value="4">Giao hàng thành công</option>
+                                            <option {{ $orders->status == '5' ? 'selected' : ''}} value="5">Đơn hàng bị hủy</option>
                                         </select>
                                 </div>
                             </div>

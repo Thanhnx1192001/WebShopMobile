@@ -99,10 +99,35 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Mô tả ngắn gọn</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="text" name="description_summary">
+                                    <input class="form-control" type="text" name="kich_thuoc" placeholder="Kích thước">
+                                    <input class="form-control" type="text" name="do_phan_giai" placeholder="Độ phân giải">
+                                    <input class="form-control" type="text" name="ram" placeholder="ram">
+                                    <input class="form-control" type="text" name="he_dieu_hanh" placeholder="Hệ điều hành">
+                                    <input class="form-control" type="text" name="cpu" placeholder="CPU">
+                                    <input class="form-control" type="text" name="bo_nho_trong" placeholder="Bộ nhớ trong">
+                                    <input class="form-control" type="text" name="dung_luong_pin" placeholder="Dung lượng pin">
+
                                 </div>
-                                @if ($errors->has('description_summary'))
-                                    <small class="form-text text-muted">{{ $errors->first('description_summary') }}</small>
+                                @if ($errors->has('kich_thuoc'))
+                                    <small class="form-text text-muted">{{ $errors->first('kich_thuoc') }}</small>
+                                @endif
+                                @if ($errors->has('do_phan_giai'))
+                                    <small class="form-text text-muted">{{ $errors->first('do_phan_giai') }}</small>
+                                @endif
+                                @if ($errors->has('ram'))
+                                    <small class="form-text text-muted">{{ $errors->first('ram') }}</small>
+                                @endif
+                                @if ($errors->has('he_dieu_hanh'))
+                                    <small class="form-text text-muted">{{ $errors->first('he_dieu_hanh') }}</small>
+                                @endif
+                                @if ($errors->has('cpu'))
+                                    <small class="form-text text-muted">{{ $errors->first('cpu') }}</small>
+                                @endif
+                                @if ($errors->has('bo_nho_trong'))
+                                    <small class="form-text text-muted">{{ $errors->first('bo_nho_trong') }}</small>
+                                @endif
+                                @if ($errors->has('dung_luong_pin'))
+                                    <small class="form-text text-muted">{{ $errors->first('dung_luong_pin') }}</small>
                                 @endif
                             </div>
                             <div class="form-group row">

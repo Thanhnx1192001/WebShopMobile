@@ -64,10 +64,10 @@
                         <div class="sd-mess">
                             <div class="txtTitle">
                                 <h2>Đặt hàng thành công !</h2>
-                                <h3>Mã đơn hàng: <span class="madonhang">2686-20230322</span></h3>
+                                <h3>Mã đơn hàng: <span class="madonhang">{{$orderCode}}</span></h3>
                             </div>
-                            <div class="txtContent">Cảm ơn bạn đã đặt hàng tại <span style="color:#e20212;"><strong>mobileworld.com.vn</strong></span>, chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất !</div>
-                            <div class="btn-continue"> <a href="/san-pham.html">Tiếp tục mua hàng</a></div>
+                            <div class="txtContent">Cảm ơn bạn đã đặt hàng tại <span style="color:#e20212;"><strong>thanhnx.vn</strong></span>, chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất !</div>
+                            <div class="btn-continue"> <a href="{{route('phone')}}">Tiếp tục mua hàng</a></div>
                         </div>
                         <div class="cart-detail">
                             <div class="box-table box-left">
@@ -75,19 +75,25 @@
                                 <div class="box-body">
                                     <ul class="items">
                                         <li>
+                                            @foreach($NewOrderDetail as $row)
+                                                @foreach($products as $product)
+                                                @if($row->product_id == $product->id)
+
                                             <div class="row-item">
-                                                <div class="img"><a href="/iphone-14-pro-max-128gb-moi-fullbox.html?code=24" title="iPhone 14 Pro Max 128GB Mới Fullbox - Đen"><img src="https://mobileworld.com.vn/uploads/product/iPhone_14/thumbs/iphone-14-pro-max-spaceblack.webp" alt="iPhone 14 Pro Max 128GB Mới Fullbox - Đen"></a></div>
-                                                <div class="txt"><a href="/iphone-14-pro-max-128gb-moi-fullbox.html?code=24">iPhone 14 Pro Max 128GB Mới Fullbox - Đen</a>
-                                                    <div class="product-price">Giá sản phẩm: <b>25.990.000₫</b></div>
-                                                    <div class="product-qty">Số lượng: 1</div>
+                                                <div class="img"><a href="{{route('phone',$product->id)}}" title=""><img src="{{asset($product->main_img)}}"></a></div>
+                                                <div class="txt"><a href="{{route('phone',$product->id)}}">{{$product->title}}</a>
+                                                    <div class="product-price">Giá sản phẩm: <b>{{number_format($product->discount,0,'.','.') }}₫</b></div>
+                                                    <div class="product-qty">Số lượng: {{$row->num}}</div>
                                                 </div>
                                             </div>
+                                            @endif
+                                                @endforeach
+                                            @endforeach
                                         </li>
                                     </ul>
                                     <ul class="box-total">
                                         <ul class="money">
-                                            <li class="total-cart"> <span class="row0">Tổng giỏ hàng:</span> <strong class="row1">25.990.000₫</strong> </li>
-                                            <li class="total-price"> <span class="row0">Tổng cộng:</span> <span class="row1">25.990.000₫</span> </li>
+                                            <li class="total-price"> <span class="row0">Tổng cộng:</span> <span class="row1">{{number_format($totalPayment,0,'.','.') }}₫</span> </li>
                                         </ul>
                                     </ul>
                                 </div>
@@ -98,23 +104,18 @@
                                     <ul class="items">
                                         <li class="customer-dinfo">
                                             <h4>Thông tin thanh toán</h4>
-                                            <div>Họ tên: duyet</div>
-                                            <div>Điện thoại: 0858562309</div>
-                                            <div>Email: xuanvb@gmail.com</div>
-                                        </li>
-                                        <li class="customer-cinfo">
-                                            <h4>Thông tin giao hàng</h4>
-                                            <div>Họ tên: duyet</div>
-                                            <div>Điện thoại: 0858562309</div>
-                                            <div>Email: xuanvb@gmail.com</div>
+                                            <div>Họ tên: {{$NewOrderUser->name}}</div>
+                                            <div>Điện thoại: {{$NewOrderUser->phone_number}}</div>
+                                            <div>Email: {{$NewOrderUser->email}}</div>
                                         </li>
                                         <li class="payment-info">
+                                            @if($NewOrder->payment == '2')
                                             <h4>Phương thức thanh toán</h4>
                                             <div>Thanh toán COD</div>
-                                        </li>
-                                        <li class="shipping-info">
-                                            <h4>Phương thức giao hàng</h4>
-                                            <div>Gửi bảo đảm qua bưu điện. Cước phí vận chuyển sẽ được thông báo trực tiếp đến khách hàng</div>
+                                            @else
+                                            <h4>Phương thức thanh toán</h4>
+                                            <div>Thanh toán chuyển khoản</div>
+                                            @endif
                                         </li>
                                     </ul>
                                 </div>
