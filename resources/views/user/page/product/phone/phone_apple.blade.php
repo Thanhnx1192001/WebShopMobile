@@ -196,8 +196,6 @@
 </section>
 <div id="productPagination"></div>
 <div id="productList">
-
-
 <script>
     var productsPerPage = 10; // Số sản phẩm hiển thị trên mỗi trang
     var currentPage = 1; // Trang hiện tại

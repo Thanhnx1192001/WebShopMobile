@@ -14,7 +14,6 @@
     </div>
 @endif
 
-<a href="{{route('admin_user.create')}}" class="btn btn-success btn-add">Thêm</a>
                 <div class="ibox">
                     <div class="ibox-head">
                         <div class="ibox-title">Quản lí user</div>
@@ -52,7 +51,6 @@
                                         @endif
                                         <td>
                                         <div class="btn-group">
-                                            <a href="{{route('admin_user.show',$row->id)}}" class="btn btn-info btn-show">Chi tiết</a>
 								            <a href="{{route('admin_user.edit',$row->id)}}" class="btn btn-warning btn-edit">Sửa</a>
                                             <form method="POST" action="{{route('admin_user.destroy',$row->id)}}" onsubmit="return ConfirmDelete( this )">
                                                 @method('DELETE')

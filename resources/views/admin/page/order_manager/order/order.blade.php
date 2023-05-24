@@ -14,7 +14,6 @@
 </div>
 @endif
 
-<a href="{{route('admin_order.create')}}" class="btn btn-success btn-add">Thêm</a>
 <div class="ibox">
     <div class="ibox-head">
         <div class="ibox-title">Quản lí đơn hàng</div>
@@ -41,7 +40,7 @@
                 </thead>
                 <tbody>
                     @if($order == '')
-                    @foreach($orders as $row)
+                    @foreach($orders->reverse() as $row)
                     <tr>
                         @php
                         $formattedDate = date('Ymd', strtotime($row->created_at));

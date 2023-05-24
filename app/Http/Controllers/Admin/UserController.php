@@ -43,7 +43,6 @@ class UserController extends Controller
             [
             'name' => 'required|max:255',
             'email' => 'required|email',
-            'password' => 'required|min:6',
             'role' => 'required',
             'phone_number' => 'required|regex:/^0\d{9}$/',
             'address' => 'required',
@@ -53,8 +52,6 @@ class UserController extends Controller
             'name.max'=>'Tên không được vượt quá 255 kí tự',
             'email.required'=>'Email không được để trống',
             'email.email'=>'email phải đúng định dạng',
-            'password.required'=>'Mật khẩu không được trống',
-            'password.min'=>'Mật khẩu không được ít hơn 6 kí tự',
             'phone_number.required'=>'Số điện thoại không được trống',
             'phone_number.regex'=>'Số điện thoại phải đúng định dạng',
             'address.required'=>'Địa chỉ không được để trống',
@@ -118,7 +115,6 @@ class UserController extends Controller
             [
             'name' => 'required|max:255',
             'email' => 'required|email',
-            'password' => 'required|min:6',
             'role' => 'required',
             'phone_number' => 'required|regex:/^0\d{9}$/',
             'address' => 'required',
@@ -128,8 +124,6 @@ class UserController extends Controller
             'name.max'=>'Tên không được vượt quá 255 kí tự',
             'email.required'=>'Email không được để trống',
             'email.email'=>'email phải đúng định dạng',
-            'password.required'=>'Mật khẩu không được trống',
-            'password.min'=>'Mật khẩu không được ít hơn 6 kí tự',
             'phone_number.required'=>'Số điện thoại không được trống',
             'phone_number.regex'=>'Số điện thoại phải đúng định dạng',
             'address.required'=>'Địa chỉ không được để trống',

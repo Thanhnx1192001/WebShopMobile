@@ -1,7 +1,7 @@
 @extends('admin.index')
 
 @section('header')
-    <title>Thêm danh mục</title>
+    <title>Sửa</title>
 @endsection
 
 @section('content')
@@ -29,46 +29,42 @@
                                 <label class="col-sm-2 col-form-label">Tên người dùng</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="name" value="{{$users->name}}">
-                                </div>
-                                @if ($errors->has('name'))
+                                    @if ($errors->has('name'))
                                     <small class="form-text text-muted">{{ $errors->first('name') }}</small>
                                 @endif
+                                </div>
+                                
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Email</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="email" value="{{$users->email}}">
-                                </div>
-                                @if ($errors->has('email'))
+                                    @if ($errors->has('email'))
                                     <small class="form-text text-muted">{{ $errors->first('email') }}</small>
                                 @endif
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Mật khẩu</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" type="text" name="password" >
                                 </div>
-                                @if ($errors->has('password'))
-                                    <small class="form-text text-muted">{{ $errors->first('password') }}</small>
-                                @endif
+                                
                             </div>
+                            
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Số điện thoại</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="phone_number" value="{{$users -> phone_number}}" >
-                                </div>
-                                @if ($errors->has('phone_number'))
+                                    @if ($errors->has('phone_number'))
                                     <small class="form-text text-muted">{{ $errors->first('phone_number')}}</small>
                                 @endif
+                                </div>
+                                
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Địa chỉ</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="address" value="{{$users -> address}}">
-                                </div>
-                                @if ($errors->has('address'))
+                                    @if ($errors->has('address'))
                                     <small class="form-text text-muted">{{ $errors->first('address') }}</small>
                                 @endif
+                                </div>
+                                
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-10 ml-sm-auto">

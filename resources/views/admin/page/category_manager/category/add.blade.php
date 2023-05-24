@@ -19,10 +19,11 @@
                                 <label class="col-sm-2 col-form-label">Name</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="name">
-                                </div>
-                                @if ($errors->has('name'))
+                                    @if ($errors->has('name'))
                                     <small class="form-text text-muted">{{ $errors->first('name') }}</small>
-                                @endif
+                                    @endif
+                                </div>
+                                
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-10 ml-sm-auto">

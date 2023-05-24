@@ -27,7 +27,7 @@
     <div class="ibox-body">
         <div class="table-responsive">
             @if($order == '')
-            @foreach($orders as $row1)
+            @foreach($orders->reverse() as $row1)
             <h3>Mã đơn hàng : <a target="_blank" href="{{route('admin_order.show',$row1->id)}}">
                     @php
                     $formattedDate = date('Ymd', strtotime($row1->created_at));

@@ -14,7 +14,6 @@
     </div>
 @endif
 
-<a href="{{route('admin_order_user.create')}}" class="btn btn-success btn-add">Thêm</a>
                 <div class="ibox">
                     <div class="ibox-head">
                         <div class="ibox-title">Quản lí thông tin người mua hàng</div>
@@ -30,7 +29,6 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>STT</th>
                                         <th>Mã đơn hàng</th>
                                         <th>Tên người mua</th>
                                         <th>Email</th>
@@ -41,7 +39,7 @@
                                 </thead>
                                 <tbody>
                                     @if($order_user == '')
-                                    @foreach($orders_users as $row)
+                                    @foreach($orders_users->reverse() as $row)
                                     <tr>
                                     @php
                                     foreach($orders as $order){
@@ -51,7 +49,6 @@
                                         }
                                     }
                                     @endphp
-                                        <td>{{$row->id}}</td>  
                                         <td><a target="_blank" href="{{route('admin_order.show',$row->order_id)}}">{{$orderCode}}</a></td> 
                                                                                                                 
                                         <td>{{$row->name}}</td>
@@ -86,7 +83,6 @@
                                         }
                                     }
                                     @endphp
-                                        <td>{{$order_user->id}}</td>  
                                         <td><a target="_blank" href="{{route('admin_order.show',$order_user->order_id)}}">{{$orderCode}}</a></td> 
                                                                                                                 
                                         <td>{{$order_user->name}}</td>

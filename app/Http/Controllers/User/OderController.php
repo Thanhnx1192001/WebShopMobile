@@ -34,6 +34,14 @@ class OderController extends Controller
                 'address.required' => 'Địa chỉ không được để trống',
             ]
         );
+        if (session()->has('Cart') != null) {
+            foreach (session('Cart')->products as $item) {              
+                if($item['productInfo']->quantity < $item['quanty']){
+                    $product = products::find($item['productInfo']->id);
+                    return redirect('showCart')->with('success',$product);
+                }
+            } 
+        } 
 
         $orders = new orders();
         $orders->note = $request->note;
@@ -50,6 +58,9 @@ class OderController extends Controller
                 $orders_details = new orders_details();
                 $orders_details->order_id = orders::latest('id')->first()->id;
                 $orders_details->product_id = $item['productInfo']->id;
+                $product_quantity = products::find($item['productInfo']->id);
+                $product_quantity->quantity = $product_quantity->quantity - $item['quanty'];
+                $product_quantity->save();
                 $orders_details->num = $item['quanty'];
                 $orders_details->save();
             }

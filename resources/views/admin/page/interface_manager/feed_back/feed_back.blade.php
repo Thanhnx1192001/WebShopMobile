@@ -14,7 +14,6 @@
 </div>
 @endif
 
-<a href="{{route('admin_feed_back.create')}}" class="btn btn-success btn-add">Thêm</a>
 <div class="ibox">
     <div class="ibox-head">
         <div class="ibox-title">Quản lí phản hồi người dùng</div>

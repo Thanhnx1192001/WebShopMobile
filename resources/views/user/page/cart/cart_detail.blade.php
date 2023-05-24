@@ -37,6 +37,9 @@
 @endsection
 
 @section('content')
+@if(session('success'))
+    <div class="alert alert-info">Số lượng sản phẩm: {{ session('success')->title }}-{{ session('success')->memory }}-{{ session('success')->color }} chỉ còn lại '{{ session('success')->quantity }}'  trong kho</div>
+@endif
 <main id="ws-content" class="ws-content outer">
     
     @if(session('Cart'))
@@ -89,7 +92,7 @@
                                 <td class="col col-quantity text-center hidden-xs">
                                     <div class="qty">
                                         <a onclick="MinusItemCart({{$item['productInfo']->id}})" class="btn-press minus fa-minus"></a>
-                                        <input type="text" value="{{$item['quanty']}}" required="1" minlength="1" class="quantity">
+                                        <input type="text" value="{{$item['quanty']}}" required="1" minlength="1" class="quantity" readonly>
                                         <a onclick="AddItemCart({{$item['productInfo']->id}})" class="btn-press plus fa-plus"></a>
                                     </div>
                                 </td>

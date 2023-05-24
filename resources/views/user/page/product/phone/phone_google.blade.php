@@ -194,6 +194,80 @@
         </div>
     </div>
 </section>
+<div id="productPagination"></div>
+<div id="productList">
+
+
+<script>
+    var productsPerPage = 3; // Số sản phẩm hiển thị trên mỗi trang
+    var currentPage = 1; // Trang hiện tại
+
+    var productList = document.getElementById('productList');
+    var productPagination = document.getElementById('productPagination');
+
+    function showProducts(page) {
+        var startIndex = (page - 1) * productsPerPage;
+        var endIndex = startIndex + productsPerPage;
+
+        var products = document.getElementsByClassName('product');
+        for (var i = 0; i < products.length; i++) {
+            if (i >= startIndex && i < endIndex) {
+                products[i].style.display = 'block';
+            } else {
+                products[i].style.display = 'none';
+            }
+        }
+    }
+
+    function updatePagination() {
+        var totalProducts = document.getElementsByClassName('product').length;
+        var totalPages = Math.ceil(totalProducts / productsPerPage);
+
+        productPagination.innerHTML = '';
+
+        var prevButton = document.createElement('button');
+        prevButton.innerText = 'Previous';
+        prevButton.disabled = currentPage === 1;
+        prevButton.addEventListener('click', function () {
+            if (currentPage > 1) {
+                currentPage--;
+                showProducts(currentPage);
+                updatePagination();
+            }
+        });
+        productPagination.appendChild(prevButton);
+
+        for (var i = 1; i <= totalPages; i++) {
+            var pageButton = document.createElement('button');
+            pageButton.innerText = i;
+            pageButton.classList.add('page');
+            pageButton.addEventListener('click', function () {
+                currentPage = parseInt(this.innerText);
+                showProducts(currentPage);
+                updatePagination();
+            });
+            if (i === currentPage) {
+                pageButton.classList.add('active');
+            }
+            productPagination.appendChild(pageButton);
+        }
+
+        var nextButton = document.createElement('button');
+        nextButton.innerText = 'Next';
+        nextButton.disabled = currentPage === totalPages;
+        nextButton.addEventListener('click', function () {
+            if (currentPage < totalPages) {
+                currentPage++;
+                showProducts(currentPage);
+                updatePagination();
+            }
+        });
+        productPagination.appendChild(nextButton);
+    }
+
+    showProducts(currentPage);
+    updatePagination();
+</script>
 @endforeach
 
 

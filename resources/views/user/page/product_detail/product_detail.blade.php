@@ -164,10 +164,14 @@
                             <li><a href="" class="item active" data-pa_id="5" data-code="24"><span class="item-image"><img src="{{asset($product->main_img)}}" width="80" height="80" class="img-cover" alt="iPhone 14 Pro Max 128GB Mới Fullbox - Đen"></span><span class="item-name">{{$product->color}}</span><input type="radio" name="options" value="24" checked="checked" class="hide"> </a></li>
                         </ul>
                     </div>
+                    @if($product->quantity > 0)
                     <div class="box-buttons tragop">
                         <div class="button-action button-buynow"> <a type="button" class="button add-to-cart buynow" onclick="AddCartNow({{$product->id}})"> <span class="row0">Mua ngay</span> <small>Giao tận nhà (COD) hoặc Nhận tại cửa hàng</small> </a> </div>
                         <div class="button-action button-addcart"> <a type="button" class="button add-to-cart ajax" onclick="AddCart({{$product->id}})" href="javascript:"> <span>Thêm vào giỏ hàng</span> </a> </div>
                     </div>
+                    @else
+                    <div class="box-buttons stock-1"> <div class="button-action button-contact widefat"> <a href="tel:xxxx" class="button"> <span class="row0">Liên hệ</span> <small>Hotline: xxxxx</small> </a> </div> </div>
+                    @endif
 
                     <div class="box-promotion widget"> <label>Khuyến mãi</label>
                         <div class="box-gift">

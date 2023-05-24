@@ -16,7 +16,7 @@
 							<div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Mã đơn hàng :</label>
                                 <div class="col-sm-10">
-                                    <h3>{{$orders -> id}}</h3>
+                                    <h3>{{$orderCode}}</h3>
                                 </div>
                             </div>
                             <div class="form-group row">

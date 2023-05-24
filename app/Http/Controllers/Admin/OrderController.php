@@ -34,6 +34,9 @@ class OrderController extends Controller
         $orders = orders::all();
         $orders_users = orders_users::all();
         $code = $request->code;
+        if(!$code){
+            return redirect('admin_order');
+        }
         $pattern = '/^\d{8}-\d+$/';
         if (preg_match($pattern, $code)) {
         }
@@ -50,8 +53,6 @@ class OrderController extends Controller
                 'orders' => $orders,
                 'order' => $order,
                 'orders_users' => $orders_users,
-
-
             ]);
         }
         else{
@@ -99,8 +100,11 @@ class OrderController extends Controller
     public function show($id)
     {
         $orders = orders::find($id);
+        $formattedDate = date('Ymd', strtotime($orders->created_at));
+        $orderCode = $formattedDate . '-' . $orders->id;
         return view('admin.page.order_manager.order.detail',[ 
             'orders' => $orders,
+            'orderCode' =>  $orderCode,
         ]);
     }
 

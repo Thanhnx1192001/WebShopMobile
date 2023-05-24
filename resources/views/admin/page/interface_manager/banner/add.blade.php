@@ -19,10 +19,11 @@
                                 <label class="col-sm-2 col-form-label">Tên banner</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="title">
-                                </div>
-                                @if ($errors->has('title'))
+                                    @if ($errors->has('title'))
                                     <small class="form-text text-muted">{{ $errors->first('title') }}</small>
                                 @endif
+                                </div>
+                                
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Kiểu banner</label>
@@ -40,20 +41,22 @@
                                 <label class="col-sm-2 col-form-label">Link banner</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="link">
-                                </div>
-                                @if ($errors->has('link'))
+                                    @if ($errors->has('link'))
                                     <small class="form-text text-muted">{{ $errors->first('link') }}</small>
                                 @endif
+                                </div>
+                                
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Link ảnh</label>
                                 <div class="col-sm-10">
                                     <input type="file" name="img_url">
-                                </div>
-                                @if ($errors->has('img_url'))
+                                    @if ($errors->has('img_url'))
                                     <small class="form-text text-muted">{{ $errors->first('img_url') }}</small>
                                 @endif
+                                </div>
+                                
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-10 ml-sm-auto">

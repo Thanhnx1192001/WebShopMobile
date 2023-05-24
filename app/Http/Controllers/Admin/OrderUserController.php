@@ -32,6 +32,9 @@ class OrderUserController extends Controller
         $orders_users = orders_users::all();
         $orders = orders::all();
         $code = $request->code;
+        if(!$code){
+            return redirect('admin_order_user');
+        }
         $pattern = '/^\d{8}-\d+$/';
         if (preg_match($pattern, $code)) {
         }

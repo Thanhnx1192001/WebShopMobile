@@ -68,9 +68,9 @@
                         <a href="javascript:;"><i class="sidebar-item-icon ti-user"></i>
                             <span class="nav-label">Cấu hình User</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
-                            <li>
+                            <!-- <li>
                                 <a href="{{route('admin_profile')}}">Tài khoản</a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="{{route('admin_user.index')}}">Quản lý user</a>
                             </li>
