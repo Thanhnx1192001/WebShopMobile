@@ -333,7 +333,7 @@
     border: 1px solid var(--bg);
 }
 .qty .btn-press {
-    padding: 0;
+    padding-top: 9px;
     float: left;
     width: 34px;
     height: 34px;

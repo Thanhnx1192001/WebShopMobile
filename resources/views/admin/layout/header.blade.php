@@ -1,10 +1,8 @@
 <header class="header">
             <div class="page-brand">
-                <a class="link" href="{{route('admin_home')}}">
                     <span class="brand">Admin
                     </span>
                     <span class="brand-mini">Ad</span>
-                </a>
             </div>
             <div class="flexbox flex-1">
                 <!-- START TOP-LEFT TOOLBAR-->
@@ -25,7 +23,6 @@
                 <!-- START TOP-RIGHT TOOLBAR-->
                 <ul class="nav navbar-toolbar">
                     <li class="dropdown dropdown-notification">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o rel"><span class="notify-signal"></span></i></a>
                         <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media">
                             <li class="dropdown-menu-header">
                                 <div>
@@ -80,7 +77,6 @@
                             <img src="./assets/img/admin-avatar.png" />
                             <span></span>{{ Auth::user()->name }}<i class="fa fa-angle-down m-l-5"></i></a>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="{{route('admin_profile')}}"><i class="fa fa-user"></i>Tài khoản</a>
                             <li class="dropdown-divider"></li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

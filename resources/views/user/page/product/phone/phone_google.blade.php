@@ -226,7 +226,7 @@
         productPagination.innerHTML = '';
 
         var prevButton = document.createElement('button');
-        prevButton.innerText = 'Previous';
+        prevButton.innerText = 'Quay lại';
         prevButton.disabled = currentPage === 1;
         prevButton.addEventListener('click', function () {
             if (currentPage > 1) {
@@ -253,7 +253,7 @@
         }
 
         var nextButton = document.createElement('button');
-        nextButton.innerText = 'Next';
+        nextButton.innerText = 'Chuyển tiếp';
         nextButton.disabled = currentPage === totalPages;
         nextButton.addEventListener('click', function () {
             if (currentPage < totalPages) {

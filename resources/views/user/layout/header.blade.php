@@ -88,12 +88,12 @@
                                         </div>
                                         @endforeach
                                     </div>
-                                    <div class="mini-cart-total"> <span>Tổng cộng:</span> <span class="total">{{number_format(session('Cart')->totalPrice,0,'.','.') }}₫</span> <a href="/gio-hang.html" class="ws-btn">Thanh toán</a></div>
+                                    <div class="mini-cart-total"> <span>Tổng cộng:</span> <span class="total">{{number_format(session('Cart')->totalPrice,0,'.','.') }}₫</span> <a href="{{route('showCart')}}" class="ws-btn">Thanh toán</a></div>
                                     <input hidden id="total-quanty-cart" type="number" value="{{session('Cart')->totalQuanty}}">
                                 </div>
                                 @else
                                 <div class="mini-cart-list">
-                                    <div class="mini-cart-empty"> Giỏ hàng của bạn đang rỗng<a href="{{route('showCart')}}">Mua ngay</a></div>
+                                    <div class="mini-cart-empty"> Giỏ hàng của bạn đang rỗng<a href="{{route('home')}}">Mua ngay</a></div>
                                 </div>
                                 @endif
                             </div>
